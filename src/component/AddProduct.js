@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from "react";
-import CancelIcon from "@mui/icons-material/Cancel";
-import smallImgBackground from "../assests/images/smallImgBackground.png";
-import LargeImgBackground from "../assests/images/LargeImgBackgound.png";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
+import CancelIcon from "@mui/icons-material/Cancel";
+import React, { useState } from "react";
+import LargeImgBackground from "../assests/images/LargeImgBackgound.png";
+import smallImgBackground from "../assests/images/smallImgBackground.png";
 
 import {
-	TextField,
-	Grid,
-	Paper,
 	Box,
-	styled,
 	Button,
 	FormControl,
+	Grid,
 	InputLabel,
-	Select,
 	MenuItem,
+	Paper,
+	Select,
+	TextField,
+	styled,
 } from "@mui/material";
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -109,23 +109,23 @@ export default function AddProduct() {
 			<Grid container spacing={0}>
 				<Grid item xs={12} md={5}>
 					<Item>
-						<DisplayImage alt="Product Image" src={LargeImgBackground} />
+						<DisplayImage alt="Product" src={LargeImgBackground} />
 
 						<AddImageContainer>
 							<AddImage>
-								<img alt="Product Image" src={smallImgBackground} />
+								<img alt="Product" src={smallImgBackground} />
 								<AddCircle />
 							</AddImage>
 							<AddImage>
-								<img alt="Product Image" src={smallImgBackground} />
+								<img alt="Product" src={smallImgBackground} />
 								<AddCircle />
 							</AddImage>
 							<AddImage>
-								<img alt="Product Image" src={smallImgBackground} />
+								<img alt="Product" src={smallImgBackground} />
 								<AddCircle />
 							</AddImage>
 							<AddImage>
-								<img alt="Product Image" src={smallImgBackground} />
+								<img alt="Product" src={smallImgBackground} />
 								<AddCircle />
 							</AddImage>
 						</AddImageContainer>

@@ -10,6 +10,9 @@ import Orders from "./component/Orders";
 import Invoice from "./component/Invoice";
 import AddProduct from "./component/AddProduct";
 import { Container } from "@mui/material";
+import AddCoupon from "./component/AddCoupon";
+import AddCategory from "./component/AddCategory";
+import Layout from "./component/Layout";
 
 function App() {
 	return (
@@ -26,6 +29,9 @@ function App() {
 					<Route path="/orders" element={<Orders />}></Route>
 					<Route path="/invoice" element={<Invoice />}></Route>
 					<Route path="/addproduct" element={<AddProduct />}></Route>
+					<Route path="/addcoupon" element={<AddCoupon />}></Route>
+					<Route path="/addcategory" element={<AddCategory />}></Route>
+					<Route path="/layout" element={<Layout />}></Route>
 				</Routes>
 			</Container>
 		</div>

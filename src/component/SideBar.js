@@ -66,7 +66,11 @@ function SideBar() {
 						>
 							Category List
 						</MenuItem>
-						<MenuItem icon={<AddCircleOutline />}>Add Category</MenuItem>
+						<MenuItem 
+							component={<Link to={"/addcategory"}></Link>} 
+							icon={<AddCircleOutline />}>
+							Add Category
+						</MenuItem>
 					</SubMenu>
 					<MenuItem
 						component={<Link to={"/customerlist"} />}
@@ -86,7 +90,10 @@ function SideBar() {
 					>
 						Invoices
 					</MenuItem>
-					<MenuItem icon={<ViewCarouselIcon />}>Layout</MenuItem>
+					<MenuItem 
+					icon={<ViewCarouselIcon />}>
+						Layout
+					</MenuItem>
 					<SubMenu label="Coupon" icon={<RedeemIcon />}>
 						<MenuItem
 							component={<Link to={"/couponlist"} />}
@@ -94,7 +101,9 @@ function SideBar() {
 						>
 							Coupon List
 						</MenuItem>
-						<MenuItem icon={<AddCircleOutline />}>Add Coupon</MenuItem>
+						<MenuItem component={<Link to={"/addcoupon"} />} icon={<AddCircleOutline />}>
+							Add Coupon
+						</MenuItem>
 					</SubMenu>
 				</Menu>
 			</Sidebar>
