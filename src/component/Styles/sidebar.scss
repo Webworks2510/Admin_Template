@@ -1,0 +1,17 @@
+@import 'variables';
+
+.sidebar{
+    background-color: $sidebarbackground-color;
+    height: 100vh;
+}
+
+h2
+{
+    color: $companyname-color;
+    font-size: $font-medium;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+
