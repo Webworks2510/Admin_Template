@@ -1,9 +1,8 @@
-import React from "react";
-import { DataGrid } from "@mui/x-data-grid";
-import SearchBar from "material-ui-search-bar";
-import IconButton from "@mui/material/IconButton";
-import VisibilityIcon from "@mui/icons-material/Visibility";
 import EditIcon from "@mui/icons-material/Edit";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import IconButton from "@mui/material/IconButton";
+import { DataGrid } from "@mui/x-data-grid";
+import React from "react";
 
 function Invoice() {
 	const invoice = [
@@ -66,9 +65,9 @@ function Invoice() {
 				maxWidth: "80%",
 			}}
 		>
-			<div>
+			{/* <div>
 				<SearchBar placeholder="Enter invoice id" />
-			</div>
+			</div> */}
 			<div
 				style={{
 					height: "73%",
