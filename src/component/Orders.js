@@ -3,6 +3,7 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import IconButton from "@mui/material/IconButton";
 import { DataGrid } from "@mui/x-data-grid";
 import React from "react";
+import SearchBar from "./SearchBar";
 
 function Orders() {
 	const orders = [
@@ -65,9 +66,9 @@ function Orders() {
 				maxWidth: "80%",
 			}}
 		>
-			{/* <div>
-				<SearchBar placeholder="Enter order id" />
-			</div> */}
+			<div>
+				<SearchBar />
+			</div>
 			<div
 				style={{
 					height: "73%",
