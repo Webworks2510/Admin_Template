@@ -3,6 +3,7 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import IconButton from "@mui/material/IconButton";
 import { DataGrid } from "@mui/x-data-grid";
 import React from "react";
+import SearchBar from "./SearchBar";
 
 function CategoryList() {
 	const category = [
@@ -27,7 +28,7 @@ function CategoryList() {
 	];
 
 	const columns = [
-		{ field: "name", headerName: "Category Name" ,flex:1},
+		{ field: "name", headerName: "Category Name", flex: 1 },
 		{
 			field: "view",
 			headerName: "View",
@@ -64,9 +65,9 @@ function CategoryList() {
 				maxWidth: "80%",
 			}}
 		>
-			{/* <div>
-				<SearchBar placeholder="Enter category name" />
-			</div> */}
+			<div>
+				<SearchBar/>
+			</div>
 			<div
 				style={{
 					height: "73%",
