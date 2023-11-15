@@ -28,7 +28,7 @@ function CouponList() {
 	];
 
 	const columns = [
-		{ field: "name", headerName: "Coupon Name", width: 170 },
+		{ field: "name", headerName: "Coupon Name", flex: 1 },
 		{
 			field: "view",
 			headerName: "View",
@@ -61,7 +61,6 @@ function CouponList() {
 	return (
 		<div
 			style={{
-				marginLeft: "35px",
 				marginTop: "150px",
 				maxWidth: "80%",
 			}}

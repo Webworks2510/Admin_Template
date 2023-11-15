@@ -155,7 +155,7 @@ export default function AddProduct() {
 							<FlexContainer sx={{ mt: 2 }}>
 								<TextField
 									id=""
-									label="MRP"
+									label="CP"
 									variant="outlined"
 									size="Normal"
 									fullWidth
@@ -163,7 +163,7 @@ export default function AddProduct() {
 								/>
 								<TextField
 									id=""
-									label="CP"
+									label="MRP"
 									variant="outlined"
 									size="Normal"
 									fullWidth

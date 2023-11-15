@@ -28,8 +28,8 @@ function Invoice() {
 	];
 
 	const columns = [
-		{ field: "id", headerName: "Invoice ID", width: 170 },
-		{ field: "name", headerName: "Order Name", width: 170 },
+		{ field: "id", headerName: "Invoice ID", flex: 1 },
+		{ field: "name", headerName: "Order Name", flex: 1 },
 		{
 			field: "view",
 			headerName: "View",
@@ -62,7 +62,6 @@ function Invoice() {
 	return (
 		<div
 			style={{
-				marginLeft: "35px",
 				marginTop: "150px",
 				maxWidth: "80%",
 			}}

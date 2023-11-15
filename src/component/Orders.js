@@ -28,8 +28,8 @@ function Orders() {
 	];
 
 	const columns = [
-		{ field: "id", headerName: "Order ID", width: 170 },
-		{ field: "name", headerName: "Customer Name", width: 170 },
+		{ field: "id", headerName: "Order ID", flex: 1 },
+		{ field: "name", headerName: "Customer Name", flex: 1 },
 		{
 			field: "view",
 			headerName: "View",
@@ -62,7 +62,6 @@ function Orders() {
 	return (
 		<div
 			style={{
-				marginLeft: "35px",
 				marginTop: "150px",
 				maxWidth: "80%",
 			}}

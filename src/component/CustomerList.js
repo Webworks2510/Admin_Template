@@ -28,7 +28,7 @@ function CustomerList() {
 	];
 
 	const columns = [
-		{ field: "name", headerName: "Customer Name", width: 170 },
+		{ field: "name", headerName: "Customer Name", flex: 1 },
 		{
 			field: "view",
 			headerName: "View",

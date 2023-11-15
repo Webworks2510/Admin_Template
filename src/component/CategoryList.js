@@ -28,7 +28,7 @@ function CategoryList() {
 	];
 
 	const columns = [
-		{ field: "name", headerName: "Category Name", width: 170 },
+		{ field: "name", headerName: "Category Name" ,flex:1},
 		{
 			field: "view",
 			headerName: "View",
@@ -61,7 +61,6 @@ function CategoryList() {
 	return (
 		<div
 			style={{
-				marginLeft: "35px",
 				marginTop: "150px",
 				maxWidth: "80%",
 			}}
