@@ -7,6 +7,7 @@ import smallImgBackground from "../assests/images/smallImgBackground.png";
 import {
 	Box,
 	Button,
+	Container,
 	FormControl,
 	Grid,
 	InputLabel,
@@ -102,150 +103,152 @@ export default function AddProduct() {
 	};
 
 	return (
-		<Box mt={5}>
-			<center>
-				<h2>Add Product</h2>
-			</center>
-			<Grid container spacing={0}>
-				<Grid item xs={12} md={5}>
-					<Item>
-						<DisplayImage alt="Product" src={LargeImgBackground} />
+		<Container maxWidth="md">
+			<Box mt={5}>
+				<center>
+					<h2>Add Product</h2>
+				</center>
+				<Grid container spacing={0}>
+					<Grid item xs={12} md={5}>
+						<Item>
+							<DisplayImage alt="Product" src={LargeImgBackground} />
 
-						<AddImageContainer>
-							<AddImage>
-								<img alt="Product" src={smallImgBackground} />
-								<AddCircle />
-							</AddImage>
-							<AddImage>
-								<img alt="Product" src={smallImgBackground} />
-								<AddCircle />
-							</AddImage>
-							<AddImage>
-								<img alt="Product" src={smallImgBackground} />
-								<AddCircle />
-							</AddImage>
-							<AddImage>
-								<img alt="Product" src={smallImgBackground} />
-								<AddCircle />
-							</AddImage>
-						</AddImageContainer>
-					</Item>
+							<AddImageContainer>
+								<AddImage>
+									<img alt="Product" src={smallImgBackground} />
+									<AddCircle />
+								</AddImage>
+								<AddImage>
+									<img alt="Product" src={smallImgBackground} />
+									<AddCircle />
+								</AddImage>
+								<AddImage>
+									<img alt="Product" src={smallImgBackground} />
+									<AddCircle />
+								</AddImage>
+								<AddImage>
+									<img alt="Product" src={smallImgBackground} />
+									<AddCircle />
+								</AddImage>
+							</AddImageContainer>
+						</Item>
+					</Grid>
+					<Grid item xs={12} md={7}>
+						<Item>
+							<div>
+								<TextField
+									id=""
+									label="Product Name"
+									variant="outlined"
+									size="Normal"
+									fullWidth
+									required
+								/>
+
+								<FormControl sx={{ mt: 2 }} required fullWidth>
+									<InputLabel id="">Choose Category</InputLabel>
+									<Select label="Choose Category *">
+										<MenuItem value={10}>Mens Shirt</MenuItem>
+										<MenuItem value={20}>Sarees</MenuItem>
+										<MenuItem value={30}>Pants</MenuItem>
+									</Select>
+								</FormControl>
+
+								<FlexContainer sx={{ mt: 2 }}>
+									<TextField
+										id=""
+										label="CP"
+										variant="outlined"
+										size="Normal"
+										fullWidth
+										required
+									/>
+									<TextField
+										id=""
+										label="MRP"
+										variant="outlined"
+										size="Normal"
+										fullWidth
+										required
+									/>
+									<TextField
+										id=""
+										label="SP"
+										variant="outlined"
+										size="Normal"
+										fullWidth
+										required
+									/>
+								</FlexContainer>
+
+								<TextField
+									id=""
+									label="Description"
+									variant="outlined"
+									size="Normal"
+									sx={{ mt: 2 }}
+									fullWidth
+									required
+								/>
+
+								<TextField
+									id=""
+									label="Tags"
+									placeholder="Enter to add tags"
+									variant="outlined"
+									size="Normal"
+									sx={{ mt: 2 }}
+									fullWidth
+									value={tagInput}
+									onChange={handleTagChange}
+									onKeyDown={(e) => e.key === "Enter" && handleAddTag()}
+									onBlur={handleTagBlur}
+								/>
+
+								<TagsContainer>
+									{tags.map((tag) => (
+										<TagButton size="small" key={tag} variant="contained">
+											<div>{tag} </div>
+											<div onClick={() => handleRemoveTag(tag)}>
+												<CancelIcon fontSize="small" />
+											</div>
+										</TagButton>
+									))}
+								</TagsContainer>
+
+								<TextField
+									id=""
+									label="Labels"
+									variant="outlined"
+									size="Normal"
+									sx={{ mt: 2 }}
+									fullWidth
+									required
+								/>
+
+								<TextField
+									id=""
+									label="Quantity"
+									variant="outlined"
+									size="Normal"
+									sx={{ mt: 2 }}
+									fullWidth
+									required
+								/>
+
+								<center>
+									<Button sx={{ mr: 2, mt: 2 }} variant="contained">
+										Create
+									</Button>
+									<Button sx={{ mr: 2, mt: 2 }} variant="outlined">
+										Discard
+									</Button>
+								</center>
+							</div>
+						</Item>
+					</Grid>
 				</Grid>
-				<Grid item xs={12} md={7}>
-					<Item>
-						<div>
-							<TextField
-								id=""
-								label="Product Name"
-								variant="outlined"
-								size="Normal"
-								fullWidth
-								required
-							/>
-
-							<FormControl sx={{ mt: 2 }} required fullWidth>
-								<InputLabel id="">Choose Category</InputLabel>
-								<Select label="Choose Category *">
-									<MenuItem value={10}>Mens Shirt</MenuItem>
-									<MenuItem value={20}>Sarees</MenuItem>
-									<MenuItem value={30}>Pants</MenuItem>
-								</Select>
-							</FormControl>
-
-							<FlexContainer sx={{ mt: 2 }}>
-								<TextField
-									id=""
-									label="CP"
-									variant="outlined"
-									size="Normal"
-									fullWidth
-									required
-								/>
-								<TextField
-									id=""
-									label="MRP"
-									variant="outlined"
-									size="Normal"
-									fullWidth
-									required
-								/>
-								<TextField
-									id=""
-									label="SP"
-									variant="outlined"
-									size="Normal"
-									fullWidth
-									required
-								/>
-							</FlexContainer>
-
-							<TextField
-								id=""
-								label="Description"
-								variant="outlined"
-								size="Normal"
-								sx={{ mt: 2 }}
-								fullWidth
-								required
-							/>
-
-							<TextField
-								id=""
-								label="Tags"
-								placeholder="Enter to add tags"
-								variant="outlined"
-								size="Normal"
-								sx={{ mt: 2 }}
-								fullWidth
-								value={tagInput}
-								onChange={handleTagChange}
-								onKeyDown={(e) => e.key === "Enter" && handleAddTag()}
-								onBlur={handleTagBlur}
-							/>
-
-							<TagsContainer>
-								{tags.map((tag) => (
-									<TagButton size="small" key={tag} variant="contained">
-										<div>{tag} </div>
-										<div onClick={() => handleRemoveTag(tag)}>
-											<CancelIcon fontSize="small" />
-										</div>
-									</TagButton>
-								))}
-							</TagsContainer>
-
-							<TextField
-								id=""
-								label="Labels"
-								variant="outlined"
-								size="Normal"
-								sx={{ mt: 2 }}
-								fullWidth
-								required
-							/>
-
-							<TextField
-								id=""
-								label="Quantity"
-								variant="outlined"
-								size="Normal"
-								sx={{ mt: 2 }}
-								fullWidth
-								required
-							/>
-
-							<center>
-								<Button sx={{ mr: 2, mt: 2 }} variant="contained">
-									Create
-								</Button>
-								<Button sx={{ mr: 2, mt: 2 }} variant="outlined">
-									Discard
-								</Button>
-							</center>
-						</div>
-					</Item>
-				</Grid>
-			</Grid>
-		</Box>
+			</Box>
+		</Container>
 	);
 }

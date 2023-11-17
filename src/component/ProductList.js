@@ -4,6 +4,7 @@ import IconButton from "@mui/material/IconButton";
 import { DataGrid } from "@mui/x-data-grid";
 import React from "react";
 import SearchBar from "./SearchBar";
+import { Container } from "@mui/material";
 
 function ProductList() {
 	const product = [
@@ -28,9 +29,9 @@ function ProductList() {
 	];
 
 	const columns = [
-		{ field: "img", headerName: "Image", width: 150 },
-		{ field: "name", headerName: "Product Name", width: 170 },
-		{ field: "price", headerName: "Price", width: 150 },
+		{ field: "img", headerName: "Image", flex: 1 ,minWidth: 150},
+		{ field: "name", headerName: "Product Name", flex: 2, minWidth: 200 },
+		{ field: "price", headerName: "Price", flex: 1,minWidth: 150 },
 		{
 			field: "view",
 			headerName: "View",
@@ -61,32 +62,29 @@ function ProductList() {
 		},
 	];
 	return (
-		<div
-			style={{
-				marginTop: "150px",
-				maxWidth: "80%",
-			}}
-		>
-			<div>
-				<SearchBar />
-			</div>
+		<Container maxWidth="md">
 			<div
 				style={{
-					height: "73%",
+					marginTop: "150px",
 				}}
 			>
-				<DataGrid
-					rows={product}
-					columns={columns}
-					initialState={{
-						pagination: {
-							paginationModel: { page: 0, pageSize: 5 },
-						},
-					}}
-					pageSizeOptions={[5, 10, 15, 50]}
-				/>
+				<div>
+					<SearchBar />
+				</div>
+				<div style={{ height: "370px" }}>
+					<DataGrid
+						rows={product}
+						columns={columns}
+						initialState={{
+							pagination: {
+								paginationModel: { page: 0, pageSize: 5 },
+							},
+						}}
+						pageSizeOptions={[5, 10, 15, 50]}
+					/>
+				</div>
 			</div>
-		</div>
+		</Container>
 	);
 }
 

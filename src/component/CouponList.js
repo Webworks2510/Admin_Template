@@ -4,6 +4,7 @@ import IconButton from "@mui/material/IconButton";
 import { DataGrid } from "@mui/x-data-grid";
 import React from "react";
 import SearchBar from "./SearchBar";
+import { Container } from "@mui/material";
 
 function CouponList() {
 	const coupon = [
@@ -28,7 +29,7 @@ function CouponList() {
 	];
 
 	const columns = [
-		{ field: "name", headerName: "Coupon Name", flex: 1 },
+		{ field: "name", headerName: "Coupon Name", flex: 1, minWidth: 200 },
 		{
 			field: "view",
 			headerName: "View",
@@ -59,32 +60,29 @@ function CouponList() {
 		},
 	];
 	return (
-		<div
-			style={{
-				marginTop: "150px",
-				maxWidth: "80%",
-			}}
-		>
-			<div>
-				<SearchBar />
-			</div>
+		<Container maxWidth="md">
 			<div
 				style={{
-					height: "73%",
+					marginTop: "150px",
 				}}
 			>
-				<DataGrid
-					rows={coupon}
-					columns={columns}
-					initialState={{
-						pagination: {
-							paginationModel: { page: 0, pageSize: 5 },
-						},
-					}}
-					pageSizeOptions={[5, 10, 15, 50]}
-				/>
+				<div>
+					<SearchBar />
+				</div>
+				<div style={{ height: "370px" }}>
+					<DataGrid
+						rows={coupon}
+						columns={columns}
+						initialState={{
+							pagination: {
+								paginationModel: { page: 0, pageSize: 5 },
+							},
+						}}
+						pageSizeOptions={[5, 10, 15, 50]}
+					/>
+				</div>
 			</div>
-		</div>
+		</Container>
 	);
 }
 
